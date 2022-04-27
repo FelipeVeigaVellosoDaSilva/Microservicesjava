@@ -18,12 +18,8 @@ public class PaymentResource {
 	@GetMapping("/payments/{workerId}/days/{days}")
 	public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days){
 		Payment payment = service.getPayment(workerId, days);
-		return ResponseEntity.ok(payment);
+		return ResponseEntity.ok().body(payment);
 	}
 	
-	@GetMapping("/payments")
-	public String getPayment(){
-		return "olá";
-	}
 	
 }
